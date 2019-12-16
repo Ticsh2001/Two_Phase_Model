@@ -42,4 +42,10 @@ public:
 		return temp.get_vertex(coord);
 	}
 
+	static bool is_on_plane(const vertex<T> &vert1, const vertex<T> &vert2, const plane<T> &pl)
+	{
+		edge<T> temp(vert1, vert2);
+		return temp.is_on_plane(pl);
+	}
+
 };

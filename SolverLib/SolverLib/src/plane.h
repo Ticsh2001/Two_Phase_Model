@@ -18,6 +18,8 @@ struct plane
 	}
 	plane(const plane<T> &pl) :vert(pl.vert), normal(pl.normal) {}
 
+	void flip() { normal.flip(); }
+
 	bool is_vertex_on_plane(const vertex<T> &_vert)
 	{
 		auto vec = _vert - vert;
@@ -34,7 +36,7 @@ public:
 
 	static bool is_vertex_on_plane(const vertex<T> &vert1, const vertex<T> &vert2, const vertex<T> &vert3, const vertex<T> &_vert)
 	{
-		plane<T> pl(vert1, vert2, vert3, normal);
+		plane<T> pl(vert1, vert2, vert3);
 		return pl.is_vertex_on_plane(_vert);
 	}
 	

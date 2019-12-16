@@ -32,8 +32,13 @@ struct vector
 	const T length() const { return std::pow(x*x + y*y + z*z, 0.5);}
 	const T dot(const vector<T> &vec) const { return x*vec.x + y*vec.y + z*vec.z; }
 	vector<T> cross(const vector<T> &vec) const { return vector<T>(y*vec.z - z*vec.y, vec.x*z - x*vec.z, x*vec.y - vec.x*y); }
+	
 	void make_unit() { auto l = length(); x = x / l; y = y / l; z = z / l; }
 	vector<T> get_unit() const { vector<T> vec = *this; vec.make_unit(); return vec; }
+	void flip() { *this = *this*(-1); }
+	vector<T> get_flip() { vector<T> vec = *this; vec.flip(); return vec; }
+
+	bool is_parallel(const vector<T> &vec) { return is_equal<T>(this->cross(vec).length(), 0.0); }
 
 
 };
