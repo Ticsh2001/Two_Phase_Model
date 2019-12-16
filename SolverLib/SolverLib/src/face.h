@@ -1,5 +1,6 @@
 #pragma once
 #include "node.h"
+#include "edge.h"
 
 enum class face_geometry_type
 {
