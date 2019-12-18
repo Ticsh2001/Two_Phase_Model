@@ -37,11 +37,14 @@ struct vector
 	vector<T> get_unit() const { vector<T> vec = *this; vec.make_unit(); return vec; }
 	void flip() { *this = *this*(-1); }
 	vector<T> get_flip() { vector<T> vec = *this; vec.flip(); return vec; }
-
+	
 	bool is_parallel(const vector<T> &vec) { return is_equal<T>(this->cross(vec).length(), 0.0); }
-
-
+	bool is_perpendicular(const vector<T> &vec){ return is_equal<T>(this->dot(vec), 0.0); }
+	T get_angle(const vector<T> &vec)
+	{
+		return std::acos(this->dot(vec) / (this->length()*vec.length()));
+	}
 };
 
 template <typename T>
-vector<T> operator - (const vertex<T> &vert1, const vertex<T> &vert2) { return vector(vert1, vert2); }
+vector<T> operator - (const vertex<T> &vert1, const vertex<T> &vert2) { return vector<T>(vert2, vert1); }

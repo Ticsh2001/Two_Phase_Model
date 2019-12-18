@@ -38,7 +38,7 @@ struct line
 		return ((is_on_plane(l)) && (!is_coliniar(l)));
 	}
 
-	bool is_math(const line<T> &l)
+	bool is_match(const line<T> &l)
 	{
 		return ((!is_parallel(l)) && (is_coliniar(l)));
 	}
@@ -47,7 +47,10 @@ struct line
 	{
 		if (is_intersec(l))
 		{
-
+			vector<T> v1 = l.vert - vert;
+			auto cross_p = v1.cross(vec);
+			auto h = cross_p.length()/
 		}
+		else return false;
 	}
 };
