@@ -148,6 +148,7 @@
     <ClInclude Include="src\edge.h" />
     <ClInclude Include="src\face.h" />
     <ClInclude Include="src\IObject.h" />
+    <ClInclude Include="src\line.h" />
     <ClInclude Include="src\node.h" />
     <ClInclude Include="src\plane.h" />
     <ClInclude Include="src\types.h" />

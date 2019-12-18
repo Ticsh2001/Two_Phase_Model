@@ -31,6 +31,23 @@ struct line
 	bool is_parallel(const line<T> &l)
 	{
 		return ((vec.is_parallel(l.vec))&&(!(vert-l.vert).is_parallel(vec)))
+	}
 
+	bool is_intersec(const line<T> &l)
+	{
+		return ((is_on_plane(l)) && (!is_coliniar(l)));
+	}
+
+	bool is_math(const line<T> &l)
+	{
+		return ((!is_parallel(l)) && (is_coliniar(l)));
+	}
+
+	bool get_intersec(const line<T> &l, vertex<T> &vert)
+	{
+		if (is_intersec(l))
+		{
+
+		}
 	}
 };
