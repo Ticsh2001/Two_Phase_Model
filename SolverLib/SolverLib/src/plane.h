@@ -1,5 +1,5 @@
 #pragma once
-#include "vector.h"
+#include "line.h"
 
 template <typename T>
 struct plane

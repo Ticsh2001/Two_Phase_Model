@@ -42,5 +42,11 @@
     <ClInclude Include="src\line.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="src\polygon.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\object_spec.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -2,9 +2,6 @@
 #include "vector.h"
 
 template <typename T>
-struct plane;
-
-template <typename T>
 struct line
 {
 	vertex<T> vert;
@@ -20,6 +17,12 @@ struct line
 		v = vert - l.vert;
 		auto val = v.dot(vec.cross(l.vec));
 		if (is_equal<T>(val, 0.0)) return true;
+		else return false;
+	}
+
+	bool is_vertex_on_line(const vertex<T> &_vert)
+	{
+		if (vec.is_parallel(vert - _vert)) return true;
 		else return false;
 	}
 
@@ -42,6 +45,8 @@ struct line
 	{
 		return ((!is_parallel(l)) && (is_coliniar(l)));
 	}
+
+	
 
 	bool get_intersec(const line<T> &l, vertex<T> &vert)
 	{

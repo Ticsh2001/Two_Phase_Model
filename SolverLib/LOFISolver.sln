@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.960
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SolverLib", "SolverLib\SolverLib.vcxproj", "{B3B562F6-2553-4325-A1D6-21E3BBCDD73B}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LinAlgTest", "Tests\LinAlgTest\LinAlgTest.vcxproj", "{99B1789A-A816-4B32-964A-BB5533083ABC}"
+	ProjectSection(ProjectDependencies) = postProject
+		{B3B562F6-2553-4325-A1D6-21E3BBCDD73B} = {B3B562F6-2553-4325-A1D6-21E3BBCDD73B}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B3B562F6-2553-4325-A1D6-21E3BBCDD73B}.Debug|x64.ActiveCfg = Debug|x64
+		{B3B562F6-2553-4325-A1D6-21E3BBCDD73B}.Debug|x64.Build.0 = Debug|x64
+		{B3B562F6-2553-4325-A1D6-21E3BBCDD73B}.Release|x64.ActiveCfg = Debug|x64
+		{B3B562F6-2553-4325-A1D6-21E3BBCDD73B}.Release|x64.Build.0 = Debug|x64
+		{99B1789A-A816-4B32-964A-BB5533083ABC}.Debug|x64.ActiveCfg = Debug|x64
+		{99B1789A-A816-4B32-964A-BB5533083ABC}.Debug|x64.Build.0 = Debug|x64
+		{99B1789A-A816-4B32-964A-BB5533083ABC}.Release|x64.ActiveCfg = Debug|x64
+		{99B1789A-A816-4B32-964A-BB5533083ABC}.Release|x64.Build.0 = Debug|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6AC7CD1A-42EB-4814-A889-3E0543D273A0}
+	EndGlobalSection
+EndGlobal
