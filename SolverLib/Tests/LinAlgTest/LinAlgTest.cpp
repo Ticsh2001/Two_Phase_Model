@@ -2,6 +2,7 @@
 #include "CppUnitTest.h"
 #include <vector.h>
 #include <vertex.h>
+#include <object_spec.h>
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
@@ -15,33 +16,19 @@ namespace LinAlgTests
 		{
 			vector<double> v(1.0,0.0,0.0);
 			Assert::AreEqual(v.length(), 1.0);
-
 		}
 
-		TEST_METHOD(VertexTest)
+		TEST_METHOD(Ref_Class_Test)
 		{
-			vertex<double> v(1.0, 0.0, 0.0);
-			Assert::AreEqual(v.z, 0.0);
+			class p :public object_spec<float, true>
+			{
+				REGISTER_REF_CONSTRUCTOR_BEGIN(p,float a, int b)
+
+			};
 
 		}
+
 	};
 
-	TEST_CLASS(Base_Objects_Tests_2)
-	{
-	public:
-
-		TEST_METHOD(VectorTest)
-		{
-			vector<double> v(1.0, 0.0, 0.0);
-			Assert::AreEqual(v.length(), 1.0);
-
-		}
-
-		TEST_METHOD(VertexTest)
-		{
-			vertex<double> v(1.0, 0.0, 0.0);
-			Assert::AreEqual(v.z, 0.0);
-
-		}
-	};
+	
 }

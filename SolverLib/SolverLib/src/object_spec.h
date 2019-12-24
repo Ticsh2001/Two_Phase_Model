@@ -1,6 +1,18 @@
 #pragma once
 #include <type_traits>
 
+#define REGISTER_REF_CONSTRUCTOR_BEGIN(class_name, ...) \
+class_name(typename std::enable_if<is_ref,int>::type = 0>) \
+{\
+
+#define REGISTER_REF_CONSTRUCTOR_END }
+
+#define REGISTER_CONSTRUCTOR_BEGIN(class_name, ...) \
+class_name(typename std::enable_if<!is_ref,int>::type = 0>) \
+{\
+
+#define REGISTER_REF_CONSTRUCTOR_END }
+
 template <typename T, bool is_ref>
 struct object_spec
 {
