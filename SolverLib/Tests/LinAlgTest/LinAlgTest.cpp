@@ -3,6 +3,7 @@
 #include <vector.h>
 #include <vertex.h>
 #include <object_spec.h>
+#include <polygon.h>
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
@@ -18,14 +19,11 @@ namespace LinAlgTests
 			Assert::AreEqual(v.length(), 1.0);
 		}
 
-		TEST_METHOD(Ref_Class_Test)
+		TEST_METHOD(Polygon_test)
 		{
-			class p :public object_spec<float, true>
-			{
-				REGISTER_REF_CONSTRUCTOR_BEGIN(p,float a, int b)
+			auto poly = polygon<double>::create_polygon({ {0.0,0.0,0.0},{1.0,0.0,0.0},{0.0,1.0,0.0} });
 
-			};
-
+			
 		}
 
 	};

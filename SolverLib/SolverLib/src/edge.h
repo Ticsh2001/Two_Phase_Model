@@ -14,7 +14,7 @@ struct edge
 	const T length() const { return (vert2 - vert1).length(); }
 	void flip() { auto temp = vert1; vert1 = vert2; vert2 = temp; }
 	vector<T> get_vector() const { return vert2 - vert1; }
-	vertex<T> get_vertex(T coord) { auto vec = vert2 - vert1; return vert1 + vec*coord);}
+	vertex<T> get_vertex(T coord) { auto vec = vert2 - vert1; vec.make_unit(); return vert1 + vec*coord); }
 
 	bool is_on_plane(const plane<T> &pl)
 	{

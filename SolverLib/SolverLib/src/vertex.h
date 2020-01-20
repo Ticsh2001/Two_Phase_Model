@@ -10,6 +10,7 @@ struct vertex
 	vertex(T _xyz) :x(_xyz), y(_xyz), z(_xyz) {}
 	vertex(T _x, T _y, T _z) :x(_x), y(_y), z(_z) {}
 	vertex(T _x, T _y) :x(_x), y(_y), z(0.0) {}
+	vertex(const std::initializer_list<T> &init):x(*init.begin()),y(*(init.begin()+1)), z(*(init.begin()+2){}
 	vertex(const vertex<T>& vert) :x(vert.x), y(vert.y), z(vert.z) {}
 
 	vertex<T> operator = (const vertex<T> &vert) { x = vert.x; y = vert.y; z = vert.z; return *this; }
